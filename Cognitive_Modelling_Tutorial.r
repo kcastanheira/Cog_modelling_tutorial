@@ -70,23 +70,7 @@ data = read.csv("Data.csv")
 
 head(data, 10)
 
-# Percent Female
-mean(data$Female)
-
-# Average Age
-mean(data$Age)
-
-# Percent Female by Condition
-#aggregate(OUTCOME ~ GROUPING VARIABLES, DATASET, FUNCTION TO APPLY)
-aggregate(Female ~ condition, data, mean)
-
-# Average Age by Condition
-aggregate(Age ~ condition, data, mean)
-aggregate(Age ~ condition, data, function(x) sd(x)/sqrt(length(x)))
-
-
 # Percent Gamble by Participant
-
 P_Gamble_PID = aggregate(Gamble ~ PID+condition, data, mean)
 head(P_Gamble_PID, 10)
 

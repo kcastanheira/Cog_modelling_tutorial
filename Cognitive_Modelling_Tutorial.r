@@ -158,7 +158,7 @@ for(i in 1:(Nsubjects)){
         #Add any Additional distributional constraints
         #Here I am telling the function to penalize any estimate which is "extreme"
         #by assuming the estimated parameters should be close to some values taken from the literature
-        -sum(log(Likelihood)) -log(dnorm(mu, exp(1),1)) - log(dnorm(alpha, 0.88, 0.15)) - log(dnorm(alpha, 0.6, 0.15))
+        -sum(log(Likelihood)) -log(dnorm(mu, exp(1),1)) - log(dnorm(alpha, 0.88, 0.15)) - log(dnorm(beta, 0.6, 0.15))
     }
   
     #Make a temporary variable to store the estimates

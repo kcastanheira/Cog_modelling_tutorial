@@ -7,7 +7,7 @@ setwd("~/Desktop/Modelling Tutorial/")
 library(ggplot2)
 
 ####### UTILITY FUNCTION #######
-Dollars = seq(0, 10, 0.1)
+Dollars = seq(0, 3, 0.1)
 U_0 = Dollars
 U_1 = Dollars^0.85
 U_2 = Dollars^0.65
@@ -43,6 +43,7 @@ Probability$Beta = as.factor(Probability$Beta)
 
 ggplot(Probability, aes(Probability, Subjective_Probability, group=Beta, color=Beta))+
 geom_line(size=1)+
+  xlab("p(Win)")+
 theme_minimal()
 
 ###### PSYCHOMETRIC FUNCTION ######
@@ -63,6 +64,7 @@ Probability$Mu = as.factor(Probability$Mu)
 
 ggplot(Probability, aes(Delta_U, Probability, group=Mu, color=Mu))+
 geom_line(size=1)+
+  ylab("P(Risky)")+
 theme_minimal()
 
 ##### DATA ANALYSIS ####
@@ -222,7 +224,7 @@ ggtitle("Alpha by Condition")+
 scale_alpha_manual(values=c(1,0.5)) + scale_fill_manual(values=c("hotpink1", "deepskyblue"))
 
 
-Dollars = seq(0, 10, 0.1)
+Dollars = seq(0, 3, 0.1)
 alpha = mean(temp$Fit_alpha[temp$condition==2])
 U_0 = Dollars^alpha
 alpha = mean(temp$Fit_alpha[temp$condition==1])
